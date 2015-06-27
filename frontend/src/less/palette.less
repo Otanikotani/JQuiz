@@ -1,0 +1,30 @@
+@main-color: #03A9F4;
+@invalid-color: #ef5350;
+@accent-color: #29B6F6;
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=date]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus.materialize-textarea {
+  border-bottom: 1px solid @accent-color;
+  -webkit-box-shadow: 0 1px 0 0 @accent-color;
+  -moz-box-shadow: 0 1px 0 0 @accent-color;
+  box-shadow: 0 1px 0 0 @accent-color;
+}
+
+.input-field input[type=text]:focus+label, .input-field input[type=password]:focus+label, .input-field input[type=email]:focus+label, .input-field input[type=url]:focus+label, .input-field input[type=date]:focus+label, .input-field input[type=tel]:focus+label, .input-field input[type=number]:focus+label, .input-field input[type=search]:focus+label, .input-field textarea:focus.materialize-textarea+label {
+  color: @accent-color;
+}
+
+.input-field .prefix.active {
+  color: @accent-color;
+}
+
+.input-field input[type=text].invalid, .input-field input[type=password].invalid, .input-field input[type=email].invalid, .input-field input[type=url].invalid, .input-field input[type=date].invalid, .input-field input[type=tel].invalid, .input-field input[type=number].invalid, .input-field input[type=search].invalid, .input-field textarea.materialize-textarea.invalid {
+  border-bottom: 1px solid @invalid-color;
+  -webkit-box-shadow: 0 1px 0 0 @invalid-color;
+  -moz-box-shadow: 0 1px 0 0 @invalid-color;
+  box-shadow: 0 1px 0 0 @invalid-color;
+}
+
+[type="radio"]:checked+label:after {
+  border: 2px solid @accent-color;
+  background-color: @accent-color;
+}

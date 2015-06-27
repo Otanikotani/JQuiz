@@ -1,0 +1,11 @@
+<div class="container no-select" style="margin-top: 20px">
+    <ul class="tabs navigation-tabs" materialize-tabs active="{{active}}">
+        <li class="tab col l3 m3 s6"><a ng-click="goto('preferences')" ng-class="{'active': isOn('preferences')}">Preferences</a></li>
+        <li class="tab col l3 m3 s6"><a ng-click="goto('optionBundles')" ng-class="{'active': isOn('optionBundles')}">Bundles</a></li>
+        <li class="tab col l3 m3 s6"><a ng-click="goto('userContent')" ng-class="{'active': isOn('userContent')}">Content</a></li>
+        <li class="tab col l3 m3 s6"><a ng-click="goto('bestPractices')" ng-class="{'active': isOn('bestPractices')}">Practices</a></li>
+    </ul>
+    <div class="col s12">
+        <div ui-view class="anim-in-out anim-fade" data-anim-speed="500"></div>
+    </div>
+</div>

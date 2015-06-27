@@ -1,0 +1,91 @@
+{
+  "base": {
+    "baseFont": "'Roboto',sans-serif",
+    "baseFontSize": 12,
+    "baseFontColor": "rgba(0, 0, 0, 0.71)",
+    "outCnvBaseFont": "'Roboto',sans-serif",
+    "outCnvBaseFontSize": 12,
+    "outCnvBaseFontColor": "rgba(0, 0, 0, 0.71)",
+    "captionFontSize": 24,
+    "captionFontBold": 0,
+    "subCaptionFontSize": 16,
+    "subCaptionFontBold": 0,
+    "legendItemFontSize": 16,
+    "plotFillAlpha": 80,
+    "canvasBgAlpha": 10,
+    "canvasBorderAlpha": 10,
+    "bgColor": "#eeeeee",
+    "borderColor": "#FFFFFF",
+    "canvasBorderThickness": 1,
+    "divLineAlpha": 0,
+    "divLineColor": "#000000",
+    "divLineThickness": 1,
+    "legendBorderAlpha": 1,
+    "legendBorderColor": "#000000",
+    "legendBorderThickness": 1,
+    "legendShadow": 1,
+    "manageResize": 1,
+    "showShadow": 0,
+    "showAlternateHGridColor": 1,
+    "alternateHGridAlpha": 40,
+    "alternateHGridColor": "fafafa",
+    "showBorder": 1,
+    "showPlotBorder": 0,
+    "showCanvasBorder": 0,
+    "usePlotGradientColor": 0,
+    "decimals": 1
+  },
+  "charts": [
+    {
+      "type": "mscolumn2d",
+      "paletteColors": "#2979ff,#263238",
+      "showLegend": 1,
+      "showvalues": 1,
+      "numberSuffix": " "
+    },
+    {
+      "type": "scatter",
+      "showvalues": 1,
+      "showLegend": 0,
+      "drawQuadrant": 1,
+      "numDivLines": 0,
+      "showZeroPlane": 0,
+      "ynumbersuffix": "%",
+      "anchorRadius": 3,
+      "anchorBgAlpha": 60,
+      "anchorBorderColor": "#2979ff",
+      "anchorBgColor": "#2979ff",
+      "numberScaleUnit": ",,",
+      "numberScaleValue": "10,0.1,1",
+      "paletteColors": "#2979ff"
+    }
+  ],
+  "line": {
+    "alpha": 20,
+    "thickness": 1,
+    "dashed": 1
+  },
+  "category": {
+    "mscolumn2d": {
+      "paletteColors": "#2979ff,#263238",
+      "showLegend": 1,
+      "showvalues": 1,
+      "numberSuffix": " "
+    },
+    "scatter": {
+      "showvalues": 1,
+      "showLegend": 0,
+      "drawQuadrant": 1,
+      "numDivLines": 0,
+      "showZeroPlane": 0,
+      "ynumbersuffix": "%",
+      "anchorRadius": 3,
+      "anchorBgAlpha": 60,
+      "anchorBorderColor": "#2979ff",
+      "anchorBgColor": "#2979ff",
+      "numberScaleUnit": ",,",
+      "numberScaleValue": "10,0.1,1",
+      "paletteColors": "#2979ff"
+    }
+  }
+}

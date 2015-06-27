@@ -1,0 +1,15 @@
+<pre-loader class="not-global" ng-show="chartLoadingStatuses[selectedIndex]">
+</pre-loader>
+<div class="caption right-align no-chart-caption raleway-title" show="noCharts" fading-caption>
+    <h3 class="black-text">No charts found</h3>
+    <h5 class="light black-text text-lighten-3">Please, add charts to the dashboard.</h5>
+</div>
+
+<div class="slider fullscreen dashboard-slider" slider ng-class="hideIndicators" ng-hide="noCharts">
+    <ul class="slides">
+        <li ng-repeat="index in chartIndexes" on-finish-render style="opacity:1">
+            <div id="chartContainer{{index}}" class="chart-container">
+            </div>
+        </li>
+    </ul>
+</div>

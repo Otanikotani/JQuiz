@@ -1,0 +1,81 @@
+<h2 class="header raleway-title">User preferences</h2>
+<form ng-submit="submit()">
+    <div class="row">
+        <div class="col l3 s12">
+            <h5 class="header">Default view</h5>
+            <p>
+                <input name="view" type="radio" id="dashboard-view" ng-model="preferences.defaultView" value="4"/>
+                <label for="dashboard-view">Dashboard</label>
+            </p>
+
+            <p>
+                <input name="view" type="radio" id="region-view"  ng-model="preferences.defaultView" value="1"/>
+                <label for="region-view">Region</label>
+            </p>
+
+            <p>
+                <input name="view" type="radio" id="dealer-view"  ng-model="preferences.defaultView" value="2"/>
+                <label for="dealer-view">Dealer</label>
+            </p>
+
+            <p>
+                <input name="view" type="radio" id="interbrand-view"  ng-model="preferences.defaultView" value="3"/>
+                <label for="interbrand-view">Interbrand</label>
+            </p>
+        </div>
+        <div class="col l3 s12">
+            <h5 class="header">Currency</h5>
+
+            <p>
+                <input name="currency" type="radio" id="eur-currency" ng-model="preferences.currencyCode" value="EUR"/>
+                <label for="eur-currency">EUR</label>
+            </p>
+
+            <p><input name="currency" type="radio" id="gbp-currency" ng-model="preferences.currency" value="GBP"/>
+                <label for="gbp-currency">GBP</label>
+            </p>
+
+            <p><input name="currency" type="radio" id="usd-currency" ng-model="preferences.currency" value="USD"/>
+                <label for="usd-currency">USD</label>
+
+        </div>
+        <div class="col l3 s12">
+            <h5 class="header">Language</h5>
+
+            <p><input name="lang" type="radio" id="eng-lang" ng-model="preferences.languageCode" value="en"/>
+                <label for="eng-lang">English</label>
+            </p>
+
+            <p><input name="lang" type="radio" id="spa-lang" ng-model="preferences.languageCode" value="es"/>
+                <label for="spa-lang">Spanish</label>
+            </p>
+
+            <p><input name="lang" type="radio" id="fre-lang" ng-model="preferences.languageCode" value="fr"/>
+                <label for="fre-lang">French</label>
+
+        </div>
+        <div class="col l3 s12">
+            <h5 class="header">Radius (km)</h5>
+
+            <p><input name="radius" type="radio" id="5-radius" ng-model="preferences.radius" value="5"/>
+                <label for="5-radius">5</label>
+            </p>
+
+            <p><input name="radius" type="radio" id="20-radius" ng-model="preferences.radius" value="20"/>
+                <label for="20-radius">20</label>
+            </p>
+
+            <p><input name="radius" type="radio" id="50-radius" ng-model="preferences.radius" value="50"/>
+                <label for="50-radius">50</label>
+            </p>
+
+            <p><input name="radius" type="radio" id="100-radius"  ng-model="preferences.radius" value="100"/>
+                <label for="100-radius">100</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l12 m10 s10">
+            <button class="waves-effect waves-light btn-large light-blue lighten-1 full-width" type="submit">SUBMIT</button>
+        </div>
+    </div>
+</form>

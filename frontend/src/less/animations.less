@@ -1,0 +1,43 @@
+@item-fade-time: 0.3s;
+@item-zoom-time: 0.3s;
+@item-bounce-time: 0.5s;
+
+.fading {
+  -webkit-transition: all linear @item-fade-time;
+  transition: all linear @item-fade-time;
+}
+
+.fading.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+
+.fading {
+  -webkit-animation: fadeIn @item-fade-time;
+  -moz-animation: fadeIn @item-fade-time;
+  -ms-animation: fadeIn @item-fade-time;
+  animation: fadeIn @item-fade-time;
+}
+
+
+.fading.ng-enter {
+  -webkit-animation: fadeIn @item-fade-time;
+  -moz-animation: fadeIn @item-fade-time;
+  -ms-animation: fadeIn @item-fade-time;
+  animation: fadeIn @item-fade-time;
+}
+
+.fading.ng-leave {
+  -webkit-animation: fadeOut @item-fade-time;
+  -moz-animation: fadeOut @item-fade-time;
+  -ms-animation: fadeOut @item-fade-time;
+  animation: fadeOut @item-fade-time;
+}
+
+
+.fading.ng-hide {
+  -webkit-animation: fadeOut @item-fade-time;
+  -moz-animation: fadeOut @item-fade-time;
+  -ms-animation: fadeOut @item-fade-time;
+  animation: fadeOut @item-fade-time;
+}
