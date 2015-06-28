@@ -1,8 +1,13 @@
 <div class="row" style="padding-top:50px">
     <form class="col l8 m12 s12 offset-l2" ng-submit="login()">
         <div class="card grey lighten-5 login noselect">
-            <div class="valign-wrapper" style="border-bottom: 1px solid rgba(160,160,160,0.2);">
-                <h1 class="page-title full-width center-align main-title">JQuiz</h1>
+            <div class="row" style="border-bottom: 1px solid rgba(160,160,160,0.2)">
+                <div class="col s4 offset-s4">
+                    <h1 class="center-align main-title">JQuiz</h1>
+                </div>
+                <div class="col s4">
+                    <h1 class="main-title" style="float: right">{{currentQuestionIndex + 1}}/{{total}}</h1>
+                </div>
             </div>
             <div class="card-content">
                 <div class="row">
