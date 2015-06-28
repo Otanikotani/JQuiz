@@ -9,7 +9,8 @@
     "angular-ui-router": "~0.2",
     "jquery": "~2.1.3",
     "ramjet": "~0.4.5",
-    "materialize": "~0.97.0"
+    "materialize": "~0.97.0",
+    "angularfire": "~1.1.2"
   },
   "dependencies": {
     "angular-ui-router-anim-in-out": "~0.0.13"

@@ -5,6 +5,7 @@ angular.module('platform.app', [
     'filters',
     'ngAnimate',
     'anim-in-out',
+    'firebase',
     'controllers'
 ])
 
