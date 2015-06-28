@@ -1,28 +1,17 @@
-/**
- * This is the main application stylesheet. It should include or import all
- * stylesheets used throughout the application as this is the only stylesheet in
- * the Grunt configuration that is automatically processed.
- */
-/**
- * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
- * project should be imported as the rest are just wasting space.
- */
-/**
- * This is our main variables file. We must include it last so we can overwrite any variable
- * definitions in our imported stylesheets.
- */
 @import 'variables.less';
 @import 'palette.less';
 @import 'animations.less';
 @import '../assets/materialize.min.css';
 @import '../assets/anim-in-out.css';
 
-.nopadding {
-  padding: 0 !important;
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/font/raleway/Raleway-Thin.ttf");
+  font-weight: 200;
 }
 
-.full-width {
-  width: 100%;
+.nopadding {
+  padding: 0 !important;
 }
 
 .noselect {
@@ -32,14 +21,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.picker__nav {
-  cursor: pointer;
-}
-
-.btn.disabled {
-  background-color: #DFDFDF !important;
 }
 
 body {
@@ -68,23 +49,9 @@ footer {
   padding-top: 0;
 }
 
-.collection .active {
-  color: #white !important;
+.full-width {
+  width: 100%;
 }
-
-.waves-effect.pinned {
-  position: fixed;
-}
-
-.stripes {
-  background-color: @main-color;
-  background-image: -moz-linear-gradient(100deg, @main-color, #e1f5fe 10%);
-  background-image: -webkit-linear-gradient(100deg, @main-color, #e1f5fe 10%);
-  background-image: -o-linear-gradient(100deg, @main-color, #e1f5fe 10%);
-  background-image: -ms-linear-gradient(100deg, @main-color, #e1f5fe 10%);
-  background-image: linear-gradient(100deg, @main-color, #e1f5fe 10%)
-}
-
 .centered {
   position: relative;
   top: 50%;
@@ -96,44 +63,16 @@ footer {
   transform: translate(-50%, -50%);
 }
 
-#preloader .preloader-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -32px;
-  margin-left: -32px
-}
-
-.loading-screen {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-.card.login a {
-  color: white;
-}
-
 html, body {
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(100deg, #fafafa, #e1f5fe 50%);
-  background-image: -webkit-linear-gradient(100deg, #fafafa, #e1f5fe 50%);
-  background-image: -o-linear-gradient(100deg, #fafafa, #e1f5fe 50%);
-  background-image: -ms-linear-gradient(100deg, #fafafa, #e1f5fe 50%);
-  background-image: linear-gradient(100deg, #fafafa, #e1f5fe 50%);
-
+  background-color:@primaryColor;
+  background-image: -moz-linear-gradient(349deg, @primaryColor, @lightPrimaryColor 150%);
+  background-image: -webkit-linear-gradient(349deg, @primaryColor, @lightPrimaryColor 150%);
+  background-image: -o-linear-gradient(349deg, @primaryColor, @lightPrimaryColor 150%);
+  background-image: -ms-linear-gradient(349deg, @primaryColor, @lightPrimaryColor 150%);
+  background-image: linear-gradient(349deg, @primaryColor, @lightPrimaryColor 150%)
 }
 
-
-@font-face {
-  font-family: "Raleway";
-  src: url("../assets/font/raleway/Raleway-Thin.ttf");
-  font-weight: 200;
-}
-
-.login-title {
+.main-title {
   font-family: 'Raleway', 'sans-serif';
   font-size: 48px;
   font-weight: 200;
@@ -142,106 +81,4 @@ html, body {
   animation: fade-in-down 0.6s;
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
-}
-
-.preloader-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 999999;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease
-}
-
-.not-global .preloader-container {
-  z-index: 100;
-}
-
-.preloader-container.loaded {
-  opacity: 0;
-}
-
-.preloader-container .preloader-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -32px;
-  margin-left: -32px
-}
-
-#fusioncharts-tooltip-element > span {
-  -webkit-border-radius: 2px  !important;
-  -moz-border-radius: 2px  !important;
-  border-radius: 2px  !important;
-  background-clip: padding-box  !important;
-  -webkit-box-sizing: border-box  !important;
-  -moz-box-sizing: border-box  !important;
-  box-sizing: border-box !important;
-  position: relative !important;
-  line-height: 48px !important;
-  background-color: #323232 !important;
-  padding: 0px 25px !important;
-  font-size: 1.1rem  !important;
-  font-family: Roboto, sans-serif !important;
-  font-weight: 300  !important;
-  color: #fff  !important;
-  display: -webkit-box !important;
-  display: -moz-box !important;
-  display: -ms-flexbox !important;
-  display: -webkit-flex !important;
-  display: flex !important;
-  white-space: normal  !important;
-  max-width: 500px !important;
-}
-
-.raleway-title {
-  font-family: 'Raleway', 'Roboto', sans-serif;
-  cursor:default;
-}
-
-.top-button {
-  top: 0;
-  right: 24px;
-}
-
-.form-horizontal input[type=radio] + label + input[type=radio] + label {
-  margin-left: 15px;
-}
-
-.fixed-action-btn {
-//  bottom: 0;
-//  top: 23px;
-
-  > ul {
-    bottom: 64px;
-//    top: 64px;
-  }
-}
-
-ul.tabs.navigation-tabs {
-  background-color: transparent;
-
-  > li {
-    background-color: transparent;
-    cursor: pointer;
-    > a {
-      color: @accent-color;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    > a:hover {
-      color: #81d4fa;
-    }
-  }
-
-  .indicator {
-    background-color: @accent-color;
-  }
 }

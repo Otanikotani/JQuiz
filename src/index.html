@@ -8,22 +8,14 @@
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-
-
-
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
     <% }); %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-
-
-
 </head>
 <body>
 <pre-loader ng-show="loadingScreen > 0"></pre-loader>
 
-<main ui-view style="height: 100%" class="{{mainClass}} anim-in-out anim-fade main-view" data-anim-speed="500">
+<main ui-view style="height: 100%" class="anim-in-out anim-fade main-view" data-anim-speed="500">
 </main>
 
 </body>
