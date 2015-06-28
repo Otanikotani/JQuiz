@@ -1,9 +1,0 @@
-*.sw*
-*~
-node_modules/
-vendor
-!vendor/fusioncharts-suite-xt/
-!vendor/materialize/
-/build
-.idea
-*.iml
