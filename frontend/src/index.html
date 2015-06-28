@@ -8,10 +8,14 @@
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+
 
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
     <% }); %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 
 
 
@@ -19,22 +23,6 @@
 <body>
 <pre-loader ng-show="loadingScreen > 0"></pre-loader>
 
-<div ng-controller="navigation" class="fixed-action-btn noselect" ng-cloak ng-show="authenticated">
-    <a class="btn-floating btn-large  light-blue lighten-1">
-        <i class="large mdi-navigation-menu"></i>
-    </a>
-    <ul>
-        <li><a class="btn-floating grey lighten-5"><i class="large mdi-action-exit-to-app red-text text-lighten-1" ng-click="logout()"></i></a></li>
-        <li><a class="btn-floating" ng-class="{'light-blue lighten-1': isOn('settings'), 'grey lighten-5': !isOn('settings')}"
-               ng-click="isOn('settings') || goto('settings.preferences')">
-            <i class="large mdi-action-settings" ng-class="{'white-text': isOn('settings'), 'grey-text': !isOn('settings')}"></i></a>
-        </li>
-        <li><a class="btn-floating" ng-class="{'light-blue lighten-1': isOn('dashboard'), 'grey lighten-5': !isOn('dashboard')}"
-               ng-click="isOn('dashboard') || goto('dashboard')">
-            <i class="large mdi-editor-insert-chart" ng-class="{'white-text': isOn('dashboard'), 'grey-text': !isOn('dashboard')}"></i></a>
-        </li>
-    </ul>
-</div>
 <main ui-view style="height: 100%" class="{{mainClass}} anim-in-out anim-fade main-view" data-anim-speed="500">
 </main>
 

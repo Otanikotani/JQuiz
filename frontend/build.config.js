@@ -7,9 +7,8 @@ module.exports = {
    * development and the `compile_dir` folder is where our app resides once it's
    * completely built.
    */
-  //build_dir: 'build',
-    build_dir: '../optimizer-webapp/src/main/webapp',
-  compile_dir: '../optimizer-webapp/src/main/webapp',
+  build_dir: 'build',
+  compile_dir: 'compile',
 
   /**
    * This is a collection of file patterns that refer to our app code (the
@@ -70,12 +69,8 @@ module.exports = {
       'vendor/lodash/dist/lodash.min.js',
       'vendor/jquery/dist/jquery.min.js',
       'vendor/materialize/dist/js/materialize.min.js',
-      'vendor/moment/min/moment.min.js',
-      'vendor/fusioncharts-suite-xt/js/fusioncharts.js',
       'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
-      'vendor/sockjs-client/dist/sockjs.js',
-      'vendor/stomp-websocket/lib/stomp.min.js',
-      'vendor/fusioncharts-suite-xt/js/fusioncharts.charts.js'
+      'vendor/ramjet/dist/ramjet.min.js'
     ],
     css: [
     ],
