@@ -1,5 +1,5 @@
 <div class="row" style="padding-top:50px">
-    <form class="col l8 m12 s12 offset-l2" ng-submit="login()">
+    <form class="col l8 m12 s12 offset-l2" ng-submit="submit()">
         <div class="card grey lighten-5 login noselect">
             <div class="row" style="border-bottom: 1px solid rgba(160,160,160,0.2)">
                 <div class="col s4 offset-s4">
@@ -10,16 +10,23 @@
                 </div>
             </div>
             <div class="card-content">
-                <div class="row">
-                    {{currentQuestion.question}}
+                <div>
+                    <pre-loader ng-show="loading" class="center-align preloader-card"></pre-loader>
                 </div>
-                <p ng-repeat="answer in currentQuestion.answers" class="answer">
-                    <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.currentAnswer" ng-value="answer"/>
-                    <label for="answer{{$index}}" class="black-text">{{answer.answer}}</label>
-                </p>
-            </div>
-            <div class="card-action">
-                <button class="waves-effect waves-light btn-large indigo full-width" ng-click="answer()">Answer</button>
+                <div class="quiz-content" ng-show="!loading">
+                    <div class="row">
+                        {{currentQuestion.question}}
+                    </div>
+                    <p ng-repeat="answer in currentQuestion.answers" class="answer">
+                        <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.currentAnswer"
+                               ng-value="answer"/>
+                        <label for="answer{{$index}}" class="black-text">{{answer.answer}}</label>
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="waves-effect waves-light btn-large indigo full-width" ng-disabled="loading">{{isDone() ? 'Done' : 'Answer'}}
+                    </button>
+                </div>
             </div>
         </div>
     </form>
