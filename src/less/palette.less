@@ -6,6 +6,7 @@
 @primaryTextColor:   #212121;
 @secondaryTextColor: #727272;
 @dividerColor:       #B6B6B6;
+@correctColor:       #4caf50;
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=date]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus.materialize-textarea {
   border-bottom: 1px solid @darkPrimaryColor;
@@ -32,4 +33,20 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, inp
 [type="radio"]:checked+label:after {
   border: 2px solid @darkPrimaryColor;
   background-color: @darkPrimaryColor;
+}
+[type="radio"].correct:checked+label:after {
+  border: 2px solid @correctColor;
+  background-color: @correctColor;
+}
+[type="radio"].correct+label:after {
+  border: 2px solid @correctColor;
+  background-color: @correctColor;
+}
+[type="radio"].incorrect:checked+label:after {
+  border: 2px solid @accentColor;
+  background-color: @accentColor;
+}
+[type="radio"].incorrect+label:after {
+  border: 2px solid @accentColor;
+  background-color: @accentColor;
 }

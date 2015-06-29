@@ -11,11 +11,20 @@
                     <pre-loader ng-show="loading" class="center-align preloader-card"></pre-loader>
                 </div>
                 <div class="results-content" ng-show="!loading">
-                    Results:
-                    <div class="card-action">
-                        <button class="waves-effect waves-light btn-large indigo full-width" ng-click="tryAgain()">Try again</button>
+                    <div ng-repeat="result in results" class="result">
+                        <div class="row">
+                            {{result.question.question}}
+                        </div>
+                        <p ng-repeat="answer in result.question.answers" class="answer">
+                            <input name="answer{{$parent.$index}}_{{$index}}" type="radio" id="answer{{$parent.$index}}_{{$index}}"
+                                   ng-model="result.answer" ng-value="answer" ng-class="{'correct': isCorrect(answer, result.answer), 'incorrect': !isCorrect(answer, result.answer)}"/>
+                            <label for="answer{{$parent.$index}}_{{$index}}" class="black-text">{{answer.answer}}</label>
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="card-action">
+                <button class="waves-effect waves-light btn-large indigo full-width" ng-click="tryAgain()">Try again</button>
             </div>
         </div>
     </form>

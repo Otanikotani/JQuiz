@@ -37,11 +37,14 @@ angular
 .controller('ResultsController', ['$scope', '$rootScope', '$state', '$firebaseObject', 'resultService'
     ($scope, $rootScope, $state, $firebaseObject, resultService) ->
       $scope.loading = false
-      console.log 'Show results!', resultService.getAll()
+      $scope.results = resultService.getAll()
 
       $scope.tryAgain = ->
         resultService.clear()
         $state.go 'quiz'
+
+      $scope.isCorrect = (answer, givenAnswer)->
+        answer.correct and (answer == givenAnswer)
 
   ])
 
