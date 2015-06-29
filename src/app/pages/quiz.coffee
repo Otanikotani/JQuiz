@@ -16,7 +16,6 @@ angular
       controller: 'QuizController'
       data:
         pageTitle: 'JQuiz'
-
 )
 
 .controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject',
@@ -29,7 +28,7 @@ angular
       $scope.loading = true
       $scope.total = QUESTIONS_TO_ASK_TOTAL
       $scope.currentQuestionIndex = 0
-      $scope.currentAnswer = {}
+      $scope.currentAnswer = undefined
       $scope.answers = []
 
       getRandomInt = (min, max) ->
@@ -76,6 +75,7 @@ angular
             $scope.currentQuestion = nextQuestion
         else
           $scope.currentQuestion = nextQuestion
+        $scope.currentAnswer = undefined
 
       $scope.done = ->
         console.log $scope.answers
