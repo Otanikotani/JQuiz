@@ -21,8 +21,7 @@ angular
 
 .controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject', 'resultService'
     ($scope, $rootScope, $state, $firebaseObject, resultService) ->
-      ref = new Firebase 'https://incandescent-fire-9197.firebaseio.com'
-      QUESTIONS_TO_ASK_TOTAL = 2
+      QUESTIONS_TO_ASK_TOTAL = 10
       questions = {}
       questionsStatuses = {}
       questionsOrder = []
@@ -44,11 +43,11 @@ angular
       loadQuestion = (index) ->
         qIndex = index
         questionsStatuses[qIndex] = false
-        questions[qIndex] = $firebaseObject ref.child('questions').child(qIndex)
+        questions[qIndex] = $firebaseObject $rootScope.FIREBASE.child('questions').child(qIndex)
         questions[qIndex].$loaded ()->
           questionsStatuses[qIndex] = true
 
-      $firebaseObject(ref.child('stats').child('questions_count')).$loaded (data) ->
+      $firebaseObject($rootScope.FIREBASE.child('stats').child('questions_count')).$loaded (data) ->
         qCount = data.$value
         for i in [0..QUESTIONS_TO_ASK_TOTAL - 1]
           addIndex(questionsOrder, qCount - 1)

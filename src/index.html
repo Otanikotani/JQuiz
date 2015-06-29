@@ -11,12 +11,19 @@
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
     <% }); %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <pre-loader ng-show="loadingScreen > 0"></pre-loader>
 
 <main ui-view style="height: 100%" class="anim-in-out anim-fade main-view" data-anim-speed="500">
 </main>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" ui-sref="highscore">
+        <i class="large material-icons" ui-sref="highscore">grade</i>
+    </a>
+</div>
 
 </body>
 

@@ -1,0 +1,26 @@
+<div class="row" style="padding-top:50px">
+    <form class="col l8 m12 s12 offset-l2">
+        <div class="card grey lighten-5 noselect">
+            <div class="row" style="border-bottom: 1px solid rgba(160,160,160,0.2)">
+                <div class="col s4 offset-s4">
+                    <h1 class="center-align main-title">Highscores</h1>
+                </div>
+            </div>
+            <div class="card-content">
+                <div>
+                    <pre-loader ng-show="loading" class="center-align preloader-card"></pre-loader>
+                </div>
+                <ul staggered-list class="collection">
+                    <li ng-repeat="profile in profiles | orderBy:'-score'" on-finish-render style="opacity: 0" class="collection-item avatar">
+                        <img src="{{profile.value.avatar}}" alt="" class="circle">
+                        <span class="title">{{profile.name}}</span>
+                        <h4>{{profile.score}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-action">
+                <button class="waves-effect waves-light btn-large indigo full-width" ui-sref="quiz">Go to quiz</button>
+            </div>
+        </div>
+    </form>
+</div>

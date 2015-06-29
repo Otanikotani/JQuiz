@@ -18,7 +18,7 @@ angular
         pageTitle: 'JQuiz'
 )
 
-.factory('resultService', [() ->
+.factory('resultService', ['$rootScope', ($rootScope) ->
     results = []
     addAll = (objs) ->
       results = objs
@@ -33,7 +33,7 @@ angular
     }
   ])
 
-.factory('loginService', [() ->
+.factory('loginService', ['$rootScope', ($rootScope) ->
     service = {}
     service.status = 'OFFLINE'
     service.getStatus = ->
@@ -45,9 +45,9 @@ angular
     service.login = (cb) ->
       if service.status == 'OFFLINE'
         service.status = 'LOGGING'
-        ref = new Firebase 'https://incandescent-fire-9197.firebaseio.com'
-        ref.authWithOAuthPopup 'github', (error, authData) ->
-          service.user = authData.github.cachedUserProfile.login
+        $rootScope.FIREBASE.authWithOAuthPopup 'github', (error, authData) ->
+          console.log(authData.github)
+          service.user = authData.github.cachedUserProfile
           service.status = 'LOGGED'
           cb?()
     return service
@@ -70,9 +70,7 @@ angular
 
       saveScore = () ->
         user = loginService.getUser()
-        ref = new Firebase 'https://incandescent-fire-9197.firebaseio.com'
-        $firebaseObject(ref.child('profiles').child(user)).$loaded (profile) ->
-          console.log 'Profile', profile
+        $firebaseObject($rootScope.FIREBASE.child('profiles').child(user.login)).$loaded (profile) ->
           if profile.highest_score
             profile.highest_score = Math.max(profile.highest_score, $scope.score)
           else
@@ -81,6 +79,7 @@ angular
             profile.attempts++
           else
             profile.attempts = 1
+          profile.avatar = user.avatar_url
           profile.$save()
 
       if not loginService.isLogged()

@@ -14,6 +14,7 @@ angular.module('platform.app', [
     })
 
     .controller('AppController', function AppController($scope, $rootScope, $state, $location) {
+        $rootScope.FIREBASE = new Firebase('https://incandescent-fire-9197.firebaseio.com');
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (angular.isDefined(toState.data) && angular.isDefined(toState.data.pageTitle)) {
                 $scope.pageTitle = toState.data.pageTitle;
@@ -26,7 +27,8 @@ angular.module('platform.app', [
 
 angular.module('controllers', [
     'controllers.pages.quiz',
-    'controllers.pages.results'
+    'controllers.pages.results',
+    'controllers.pages.highscore'
 ]);
 angular.module('filters', [
     'filters.fromNow'
