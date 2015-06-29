@@ -39,6 +39,14 @@ angular
       $scope.loading = false
       $scope.results = resultService.getAll()
 
+      $scope.score = 0
+      for result in $scope.results
+        if result.answer.correct
+          $scope.score += result.question.difficulty
+
+
+
+
       $scope.tryAgain = ->
         resultService.clear()
         $state.go 'quiz'

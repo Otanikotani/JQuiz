@@ -5,6 +5,9 @@
                 <div class="col s4 offset-s4">
                     <h1 class="center-align main-title">Results</h1>
                 </div>
+                <div class="col s4">
+                    <h1 class="main-title" style="float: right">Score: {{score}}</h1>
+                </div>
             </div>
             <div class="card-content">
                 <div>
@@ -17,8 +20,13 @@
                         </div>
                         <p ng-repeat="answer in result.question.answers" class="answer">
                             <input name="answer{{$parent.$index}}_{{$index}}" type="radio" id="answer{{$parent.$index}}_{{$index}}"
+                                   disabled="disabled" disabled
                                    ng-model="result.answer" ng-value="answer" ng-class="{'correct': isCorrect(answer, result.answer), 'incorrect': !isCorrect(answer, result.answer)}"/>
-                            <label for="answer{{$parent.$index}}_{{$index}}" class="black-text">{{answer.answer}}</label>
+                            <label for="answer{{$parent.$index}}_{{$index}}" class="black-text" >
+                                {{answer.answer}}
+                                <br/>
+                                <span style="font-style:italic">{{answer.description}}</span>
+                            </label>
                         </p>
                     </div>
                 </div>
