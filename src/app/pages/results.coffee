@@ -18,12 +18,29 @@ angular
         pageTitle: 'JQuiz'
 )
 
-.controller('ResultsController', ['$scope', '$rootScope', '$state', '$firebaseObject',
-    ($scope, $rootScope, $state, $firebaseObject) ->
+.factory('resultService', [() ->
+    results = []
+    addAll = (objs) ->
+      results = objs
+    clear = () ->
+      results = []
+    getAll = () ->
+      results
+    return {
+      addAll: addAll
+      clear: clear
+      getAll: getAll
+    }
+  ])
+
+
+.controller('ResultsController', ['$scope', '$rootScope', '$state', '$firebaseObject', 'resultService'
+    ($scope, $rootScope, $state, $firebaseObject, resultService) ->
       $scope.loading = false
-      console.log 'Show results!'
+      console.log 'Show results!', resultService.getAll()
 
       $scope.tryAgain = ->
+        resultService.clear()
         $state.go 'quiz'
 
   ])

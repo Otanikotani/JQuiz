@@ -4,6 +4,7 @@ angular
     'directives',
     'ngAnimate',
     'firebase',
+    'controllers.pages.results',
     'ngResource'
   ])
 
@@ -18,10 +19,10 @@ angular
         pageTitle: 'JQuiz'
 )
 
-.controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject',
-    ($scope, $rootScope, $state, $firebaseObject) ->
+.controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject', 'resultService'
+    ($scope, $rootScope, $state, $firebaseObject, resultService) ->
       ref = new Firebase 'https://incandescent-fire-9197.firebaseio.com'
-      QUESTIONS_TO_ASK_TOTAL = 3
+      QUESTIONS_TO_ASK_TOTAL = 2
       questions = {}
       questionsStatuses = {}
       questionsOrder = []
@@ -63,8 +64,14 @@ angular
       $scope.submit = () ->
         if $scope.isDone() then $scope.done() else $scope.answer()
 
+      saveAnswer = ->
+        answer =
+          question: $scope.currentQuestion
+          answer: $scope.currentAnswer
+        $scope.answers.push(answer)
+
       $scope.answer = () ->
-        $scope.answers[questionsOrder[$scope.currentQuestionIndex]] = $scope.currentAnswer
+        saveAnswer()
         qIndex = questionsOrder[++$scope.currentQuestionIndex]
         nextQuestion = questions[qIndex]
         status = questionsStatuses[qIndex]
@@ -78,6 +85,8 @@ angular
         $scope.currentAnswer = undefined
 
       $scope.done = ->
+        saveAnswer()
+        resultService.addAll($scope.answers)
         $state.go 'results'
 
 
