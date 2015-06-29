@@ -21,7 +21,7 @@ angular
 .controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject',
     ($scope, $rootScope, $state, $firebaseObject) ->
       ref = new Firebase 'https://incandescent-fire-9197.firebaseio.com'
-      QUESTIONS_TO_ASK_TOTAL = 10
+      QUESTIONS_TO_ASK_TOTAL = 3
       questions = {}
       questionsStatuses = {}
       questionsOrder = []
@@ -78,10 +78,10 @@ angular
         $scope.currentAnswer = undefined
 
       $scope.done = ->
-        console.log $scope.answers
+        $state.go 'results'
+
 
       $scope.isDone = ->
         $scope.currentQuestionIndex + 1 >= $scope.total
-
   ])
 

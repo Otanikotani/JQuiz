@@ -25,7 +25,8 @@ angular.module('platform.app', [
     });
 
 angular.module('controllers', [
-    'controllers.pages.quiz'
+    'controllers.pages.quiz',
+    'controllers.pages.results'
 ]);
 angular.module('filters', [
     'filters.fromNow'
