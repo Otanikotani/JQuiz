@@ -18,7 +18,7 @@
                         {{currentQuestion.question}}
                     </div>
                     <p ng-repeat="answer in currentQuestion.answers" class="answer" ng-if="!currentQuestion.multiple">
-                        <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.currentAnswer"
+                        <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.$parent.currentAnswer"
                                ng-value="answer"/>
                         <label for="answer{{$index}}" class="black-text">{{answer.answer}}</label>
                     </p>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="card-action">
-                <button class="waves-effect waves-light btn-large indigo full-width" ng-click="submit()" ng-disabled="loading || currentAnswer === undefined">{{isDone() ? 'Done' : 'Answer'}}
+                <button class="waves-effect waves-light btn-large indigo full-width" ng-click="submit()" ng-disabled="loading || (currentAnswer === undefined)">{{isDone() ? 'Done' : 'Answer'}}
                 </button>
             </div>
         </div>
