@@ -33,7 +33,11 @@
                                    disabled="disabled" disabled
                                    ng-class="{'correct': isMultipleCorrect(answer, result.answer), 'incorrect': !isMultipleCorrect(answer, result.answer)}"
                                    ng-value="answer"/>
-                            <label for="checkbox_answer{{$index}}" class="black-text">{{answer.answer}}</label>
+                            <label for="checkbox_answer{{$index}}" class="black-text">
+                                {{answer.answer}}
+                                <br/>
+                                <span style="font-style:italic">{{answer.description}}</span>
+                            </label>
                         </p>
 
                     </div>
