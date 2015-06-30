@@ -76,6 +76,7 @@ angular
             if $scope.isMultipleCorrect(answer, result.answer)
               $scope.score += result.question.difficulty * part
 
+      $scope.score = Math.round($scope.score)
       $scope.tryAgain = ->
         resultService.clear()
         $state.go 'quiz'

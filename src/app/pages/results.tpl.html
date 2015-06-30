@@ -16,13 +16,13 @@
                 <div class="results-content" ng-show="!loading">
                     <div ng-repeat="result in results" class="result">
                         <div class="row">
-                            {{result.question.question}}
+                            <p ng-bind-html="result.question.question | sanitize" highlight-code></p>
                         </div>
                         <p ng-repeat="answer in result.question.answers" class="answer" ng-if="!result.question.multiple">
-                            <input name="answer{{$parent.$index}}_{{$index}}" type="radio" id="answer{{$parent.$index}}_{{$index}}"
+                            <input name="answer{{$parent.$parent.$index}}_{{$index}}" type="radio" id="answer{{$parent.$parent.$index}}_{{$index}}"
                                    disabled="disabled" disabled
                                    ng-model="result.answer" ng-value="answer" ng-class="{'correct': isCorrect(answer, result.answer), 'incorrect': !isCorrect(answer, result.answer)}"/>
-                            <label for="answer{{$parent.$index}}_{{$index}}" class="black-text" >
+                            <label for="answer{{$parent.$parent.$index}}_{{$index}}" class="black-text" >
                                 {{answer.answer}}
                                 <br/>
                                 <span style="font-style:italic">{{answer.description}}</span>
