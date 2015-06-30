@@ -14,9 +14,10 @@
                 <div>
                     <pre-loader ng-show="loading" class="center-align preloader-card"></pre-loader>
                 </div>
+
                 <div class="quiz-content" ng-show="!loading">
                     <div class="row">
-                        <p ng-bind-html="currentQuestion.question | sanitize"></p>
+                        <p ng-bind-html="currentQuestion.question | sanitize" highlight-code></p>
                     </div>
                     <p ng-repeat="answer in currentQuestion.answers" class="answer" ng-if="!currentQuestion.multiple">
                         <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.$parent.currentAnswer"

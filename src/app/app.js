@@ -14,7 +14,7 @@ angular.module('platform.app', [
     })
 
     .run(function () {
-        hljs.initHighlightingOnLoad();
+        hljs.configure({useBR: true});
     })
 
     .controller('AppController', function AppController($scope, $rootScope, $state, $location) {
@@ -46,5 +46,6 @@ angular.module('directives', [
     'directives.autoFocus',
     'directives.slider',
     'directives.materialize.tabs',
-    'directives.fadingCaption'
+    'directives.fadingCaption',
+    'directives.highlightCode'
 ]);
