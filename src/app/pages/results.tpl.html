@@ -18,7 +18,7 @@
                         <div class="row">
                             {{result.question.question}}
                         </div>
-                        <p ng-repeat="answer in result.question.answers" class="answer">
+                        <p ng-repeat="answer in result.question.answers" class="answer" ng-if="!result.question.multiple">
                             <input name="answer{{$parent.$index}}_{{$index}}" type="radio" id="answer{{$parent.$index}}_{{$index}}"
                                    disabled="disabled" disabled
                                    ng-model="result.answer" ng-value="answer" ng-class="{'correct': isCorrect(answer, result.answer), 'incorrect': !isCorrect(answer, result.answer)}"/>
@@ -28,6 +28,14 @@
                                 <span style="font-style:italic">{{answer.description}}</span>
                             </label>
                         </p>
+                        <p ng-repeat="answer in result.question.answers" class="answer" ng-if="result.question.multiple">
+                            <input name="answer" type="checkbox" id="checkbox_answer{{$index}}" ng-model="answer.checked"
+                                   disabled="disabled" disabled
+                                   ng-class="{'correct': isMultipleCorrect(answer, result.answer), 'incorrect': !isMultipleCorrect(answer, result.answer)}"
+                                   ng-value="answer"/>
+                            <label for="checkbox_answer{{$index}}" class="black-text">{{answer.answer}}</label>
+                        </p>
+
                     </div>
                 </div>
             </div>

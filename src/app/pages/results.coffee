@@ -58,15 +58,27 @@ angular
     ($scope, $rootScope, $state, $firebaseObject, resultService, loginService) ->
       $scope.results = resultService.getAll()
       $scope.score = 0
+
+      $scope.isCorrect = (answer, givenAnswer) ->
+        answer.correct and (answer == givenAnswer)
+
+      $scope.isMultipleCorrect = (answer, givenAnswers) ->
+        (answer.correct and (answer in givenAnswers)) or (!answer.correct and (answer not in givenAnswers))
+
       for result in $scope.results
-        if result.answer.correct
-          $scope.score += result.question.difficulty
+        if not result.question.multiple
+          if result.answer.correct
+            $scope.score += result.question.difficulty
+        else
+          totalAnswers = result.question.answers.length
+          part = 1 / totalAnswers
+          for answer in result.question.answers
+            if $scope.isMultipleCorrect(answer, result.answer)
+              $scope.score += result.question.difficulty * part
+
       $scope.tryAgain = ->
         resultService.clear()
         $state.go 'quiz'
-
-      $scope.isCorrect = (answer, givenAnswer)->
-        answer.correct and (answer == givenAnswer)
 
       saveScore = () ->
         user = loginService.getUser()

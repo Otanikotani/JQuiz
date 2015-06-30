@@ -19,8 +19,8 @@ angular
         pageTitle: 'JQuiz'
 )
 
-.controller('QuizController', ['$scope', '$rootScope', '$state', '$firebaseObject', 'resultService'
-    ($scope, $rootScope, $state, $firebaseObject, resultService) ->
+.controller('QuizController', ['$scope', '$rootScope', '$state', '$filter', '$firebaseObject', 'resultService'
+    ($scope, $rootScope, $state, $filter, $firebaseObject, resultService) ->
       QUESTIONS_TO_ASK_TOTAL = 10
       questions = {}
       questionsStatuses = {}
@@ -88,6 +88,13 @@ angular
         resultService.addAll($scope.answers)
         $state.go 'results'
 
+      $scope.answerGiven = ->
+        if not $scope.currentQuestion.multiple
+          return $scope.currentAnswer == undefined
+        else
+          return
+      $scope.toggleAnswer = ->
+        $scope.currentAnswer = $filter('filter')($scope.currentQuestion.answers, {checked: true})
 
       $scope.isDone = ->
         $scope.currentQuestionIndex + 1 >= $scope.total

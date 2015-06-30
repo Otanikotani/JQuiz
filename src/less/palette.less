@@ -50,3 +50,35 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, inp
   border: 2px solid @accentColor;
   background-color: @accentColor;
 }
+
+[type="checkbox"]:checked+label:before {
+  border: 2px solid @darkPrimaryColor;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+[type="checkbox"].correct:checked+label:before {
+  border: 2px solid @correctColor;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+[type="checkbox"].correct+label:before {
+  border: 2px solid @correctColor;
+}
+[type="checkbox"].incorrect:checked+label:before {
+  border: 2px solid @accentColor;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+[type="checkbox"].incorrect+label:before {
+  border: 2px solid @accentColor;
+}
+
+[type="checkbox"]:not(:checked):disabled.correct+label:before {
+  border: 2px solid @correctColor;
+  background-color: @textPrimaryColor;
+}
+
+[type="checkbox"]:not(:checked):disabled.incorrect+label:before {
+  border: 2px solid @accentColor;
+  background-color: @textPrimaryColor;
+}
