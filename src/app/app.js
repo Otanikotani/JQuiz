@@ -13,6 +13,10 @@ angular.module('platform.app', [
         $urlRouterProvider.otherwise('/quiz');
     })
 
+    .run(function () {
+        hljs.initHighlightingOnLoad();
+    })
+
     .controller('AppController', function AppController($scope, $rootScope, $state, $location) {
         $rootScope.FIREBASE = new Firebase('https://incandescent-fire-9197.firebaseio.com');
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {

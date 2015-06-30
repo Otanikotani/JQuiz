@@ -27,6 +27,7 @@
 vendor
 !vendor/fusioncharts-suite-xt/
 !vendor/materialize/
+!vendor/highlight/
 /build
 .idea
 *.iml

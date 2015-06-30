@@ -72,7 +72,8 @@ module.exports = {
       'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
       'vendor/angularfire/dist/angularfire.min.js',
       'vendor/firebase/firebase.js',
-      'vendor/ramjet/dist/ramjet.min.js'
+      'vendor/ramjet/dist/ramjet.min.js',
+      'vendor/highlight/highlight.pack.js'
     ],
     css: [
     ],
