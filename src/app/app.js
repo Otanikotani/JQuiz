@@ -31,7 +31,8 @@ angular.module('controllers', [
     'controllers.pages.highscore'
 ]);
 angular.module('filters', [
-    'filters.fromNow'
+    'filters.fromNow',
+    'filters.sanitize'
 ]);
 angular.module('directives', [
     'directives.wavesAfterRender',

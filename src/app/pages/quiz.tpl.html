@@ -15,7 +15,7 @@
                 </div>
                 <div class="quiz-content" ng-show="!loading">
                     <div class="row">
-                        {{currentQuestion.question}}
+                        <p ng-bind-html="currentQuestion.question | sanitize"></p>
                     </div>
                     <p ng-repeat="answer in currentQuestion.answers" class="answer" ng-if="!currentQuestion.multiple">
                         <input name="answer" type="radio" id="answer{{$index}}" ng-model="$parent.$parent.currentAnswer"
