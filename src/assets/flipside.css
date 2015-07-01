@@ -1,0 +1,148 @@
+.flipside {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.flipside .flipside-btn.is-open ~ .description {
+    opacity: 0;
+}
+
+.flipside .flipside-btn {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 54px;
+    -webkit-transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-align: center;
+}
+
+.flipside .flipside-btn-front {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 54px;
+    background-color: #F44336;
+    color: #fff;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.flipside .flipside-btn-front:hover {
+    background-color: #f77066;
+}
+
+.flipside .flipside-btn.is-open .flipside-btn-front {
+    pointer-events: none;
+    line-height: 140px;
+}
+
+.flipside .flipside-btn-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    color: #222;
+    -webkit-transform: translateZ(-1px) rotateX(180deg);
+    transform: translateZ(-1px) rotateX(180deg);
+    overflow: hidden;
+    -webkit-transition: box-shadow 0.8s ease;
+    transition: box-shadow 0.8s ease;
+}
+
+.flipside .flipside-btn-back button {
+    padding: 12px 20px;
+    width: 50%;
+    margin: 0 5px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background 0.15s ease;
+    transition: background 0.15s ease;
+}
+
+.flipside .flipside-btn-back p {
+    margin-top: 27px;
+    margin-bottom: 25px;
+}
+
+.flipside .flipside-btn-back .action {
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding-top: 10px;
+}
+.flipside .flipside-btn-back button:focus {
+    outline: 0;
+}
+.flipside .flipside-btn-back button.flipside-btn-yes {
+    background-color: #2196F3;
+    color: #fff;
+}
+.flipside .flipside-btn-back button.flipside-btn-yes:hover {
+    background-color: #51adf6;
+}
+.flipside .flipside-btn-back button.flipside-btn-no {
+    background-color: #eee;
+    color: #212121;
+}
+.flipside .flipside-btn-back button.flipside-btn-no:hover {
+}
+
+.flipside .flipside-btn.is-open .flipside-btn-back {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.flipside .flipside-btn[data-direction="left"] .flipside-btn-back,
+.flipside .flipside-btn[data-direction="right"] .flipside-btn-back {
+    -webkit-transform: translateZ(-1px) rotateY(180deg);
+    transform: translateZ(-1px) rotateY(180deg);
+}
+
+.flipside .flipside-btn.is-open {
+    width: 100%;
+    height: 140px;
+}
+
+.flipside .flipside-btn[data-direction="top"].is-open {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.flipside .flipside-btn[data-direction="right"].is-open {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flipside .flipside-btn[data-direction="bottom"].is-open {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+
+.flipside .flipside-btn[data-direction="left"].is-open {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.flipside-link {
+    cursor: pointer;
+    margin-right: 20px;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}

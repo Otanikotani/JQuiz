@@ -48,5 +48,6 @@ angular.module('directives', [
     'directives.slider',
     'directives.materialize.tabs',
     'directives.fadingCaption',
+    'directives.flipside',
     'directives.highlightCode'
 ]);

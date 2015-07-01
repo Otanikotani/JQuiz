@@ -94,10 +94,10 @@ angular
             profile.attempts = 1
           profile.avatar = user.avatar_url
           profile.$save()
-
-      if not loginService.isLogged()
-        loginService.login(saveScore)
-      else
-        saveScore()
+      $scope.shareResults = ->
+        if not loginService.isLogged()
+          loginService.login(saveScore)
+        else
+          saveScore()
   ])
 

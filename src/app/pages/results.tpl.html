@@ -47,7 +47,17 @@
                 </div>
             </div>
             <div class="card-action">
-                <button class="waves-effect waves-light btn-large indigo full-width" ui-sref="quiz">Try again</button>
+                <div class="row">
+                    <div class="col s4">
+                        <flipside title="share your results">
+                            <div class="row">
+                                <a class="col s12 flipside-link center-align black-text" ng-click="shareResults()">Github</a>
+                            </div>
+                        </flipside>
+                    </div>
+                    <button class="col s8 waves-effect waves-light btn-large red full-width" ui-sref="quiz">Try again</button>
+                </div>
+
             </div>
         </div>
     </form>
