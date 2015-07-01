@@ -15,6 +15,7 @@ angular.module('platform.app', [
 
     .run(function () {
         hljs.configure({useBR: true});
+        hljs.initHighlightingOnLoad();
     })
 
     .controller('AppController', function AppController($scope, $rootScope, $state, $location) {

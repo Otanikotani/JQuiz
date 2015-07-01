@@ -25,7 +25,7 @@
                             <label for="answer{{$parent.$parent.$index}}_{{$index}}" class="black-text" >
                                 {{answer.answer}}
                                 <br/>
-                                <span style="font-style:italic">{{answer.description}}</span>
+                                <span style="font-style:italic" ng-if="answer.description !== undefined">{{answer.description}}</span>
                             </label>
                         </p>
                         <p ng-repeat="answer in result.question.answers" class="answer" ng-if="result.question.multiple">
@@ -36,10 +36,13 @@
                             <label for="checkbox_answer{{$index}}" class="black-text">
                                 {{answer.answer}}
                                 <br/>
-                                <span style="font-style:italic">{{answer.description}}</span>
+                                <span style="font-style:italic" ng-if="answer.description !== undefined">{{answer.description}}</span>
                             </label>
                         </p>
 
+                        <div class="row indented-tabs">
+                            <p ng-bind-html="result.question.description | sanitize" highlight-code></p>
+                        </div>
                     </div>
                 </div>
             </div>
