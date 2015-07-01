@@ -21,7 +21,7 @@ angular
 
 .controller('QuizController', ['$scope', '$rootScope', '$state', '$filter', '$firebaseObject', 'resultService'
     ($scope, $rootScope, $state, $filter, $firebaseObject, resultService) ->
-      QUESTIONS_TO_ASK_TOTAL = 1
+      QUESTIONS_TO_ASK_TOTAL = 10
       questions = {}
       questionsStatuses = {}
       questionsOrder = []
